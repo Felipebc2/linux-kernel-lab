@@ -57,6 +57,16 @@ injetada pelo patch no kernel ring buffer via `dmesg`.
 
 ## 🚀 Como reproduzir
 
+### 0. Variáveis de ambiente (obrigatório antes de tudo)
+
+```bash
+export MATRICULA="sua_matricula"   # ex: 2311292 — usada para buscar o patch correto
+export JOBS=$(nproc)               # número de CPUs para compilação paralela
+```
+
+> `WORKDIR` é detectado automaticamente a partir da localização dos scripts.
+> `MATRICULA` é a única variável que você precisa definir manualmente.
+
 ### 1. Dependências
 ```bash
 bash scripts/setup.sh
@@ -83,7 +93,7 @@ qemu-system-x86_64 \
   -kernel linux-stable/arch/x86/boot/bzImage \
   -initrd initramfs.cpio.gz \
   -nographic \
-  -append "console=ttyS0 loglevel=7"
+  -append "console=ttyS0 loglevel=3"
 ```
 
 Dentro do shell:
@@ -98,7 +108,7 @@ dmesg | tail -20
 |-------|--------|
 | Ambiente e dependências | ✅ concluído |
 | BusyBox 1.36.1 compilado | ✅ concluído |
-| Kernel 6.6.87 configurado | ⏳ pendente |
+| Kernel 6.6.87 configurado | ✅ concluído |
 | Patch aplicado | ⏳ pendente |
 | Kernel compilado | ⏳ pendente |
 | initramfs montado | ⏳ pendente |

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-WORKDIR=${WORKDIR:-/home/felipebc2/repo/kernel/so-t01}
+WORKDIR=${WORKDIR:-$(cd "$(dirname "$0")/.." && pwd)}
 JOBS=${JOBS:-$(nproc)}
 
 echo "==> Clonando BusyBox 1.36.1..."
