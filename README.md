@@ -53,7 +53,18 @@ injetada pelo patch no kernel ring buffer via `dmesg`.
 
 - WSL2 + Ubuntu 24.04 (ou Ubuntu nativo)
 - ~10 GB de espaço livre em disco
-- `gh` CLI autenticado (`gh auth login`)
+- `gh` CLI instalado e autenticado — **obrigatório antes de qualquer passo**
+
+```bash
+# instala as dependências (inclui gh)
+bash scripts/setup.sh
+
+# autentica o GitHub CLI — faça isso antes de rodar qualquer outro script
+gh auth login
+```
+
+> No `gh auth login`: escolha `GitHub.com` → `HTTPS` → `Login with a web browser`.
+> Um código será gerado — cole no browser quando solicitado.
 
 ## 🚀 Como reproduzir
 

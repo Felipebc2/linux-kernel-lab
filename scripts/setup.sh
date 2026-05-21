@@ -12,10 +12,17 @@ sudo apt-get install -y \
 echo "==> Instalando QEMU (x86)..."
 sudo apt-get install -y qemu-system qemu-utils qemu-system-x86
 
+echo "==> Instalando GitHub CLI..."
+sudo apt-get install -y gh
+
 echo "==> Verificando instalações..."
 qemu-system-x86_64 --version
 gcc --version
 make --version
 pahole --version
+gh --version
 
 echo "Dependências instaladas com sucesso."
+echo ""
+echo "IMPORTANTE: autentique o GitHub CLI antes de continuar:"
+echo "  gh auth login"
