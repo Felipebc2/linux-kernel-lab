@@ -1,0 +1,18 @@
+# Código-fonte de terceiros
+linux-stable/
+busybox/
+so-2025-02-t-01/
+
+# Binários e artefatos gerados
+bzImage
+initramfs.cpio.gz
+sysinfo_call
+sysinfo_raw
+*.o
+*.ko
+
+# Patch — pertence ao professor
+*.patch
+
+# Configuração do kernel
+.config
