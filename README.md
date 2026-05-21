@@ -97,7 +97,7 @@ dmesg | tail -20
 | Etapa | Status |
 |-------|--------|
 | Ambiente e dependências | ✅ concluído |
-| BusyBox 1.36.1 compilado | ⏳ pendente |
+| BusyBox 1.36.1 compilado | ✅ concluído |
 | Kernel 6.6.87 configurado | ⏳ pendente |
 | Patch aplicado | ⏳ pendente |
 | Kernel compilado | ⏳ pendente |
