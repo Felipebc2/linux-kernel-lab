@@ -16,3 +16,4 @@ sysinfo_raw
 
 # Configuração do kernel
 .config
+.claudeignore

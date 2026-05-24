@@ -110,7 +110,7 @@ qemu-system-x86_64 \
 Dentro do shell:
 ```sh
 /bin/sysinfo_call
-dmesg | tail -20
+dmesg | /bin/grep -20
 ```
 
 ## 📊 Status das Etapas
