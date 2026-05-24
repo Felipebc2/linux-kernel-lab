@@ -100,7 +100,7 @@ dmesg | /bin/grep SOLUCAO
 
 | Etapa | Status |
 |-------|--------|
-| Ambiente e dependências | ⏳ pendente |
+| Ambiente e dependências | ✅ concluído |
 | BusyBox 1.36.1 compilado | ⏳ pendente |
 | Kernel 6.6.87 configurado | ⏳ pendente |
 | Patch aplicado | ⏳ pendente |
