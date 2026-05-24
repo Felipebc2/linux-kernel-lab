@@ -41,7 +41,8 @@ injetada pelo patch no kernel ring buffer via `dmesg`.
 │   ├── setup.sh            # Instala dependências do sistema
 │   ├── build-busybox.sh    # Compila BusyBox 1.36.1 estático
 │   ├── build-kernel.sh     # Configura e compila o kernel
-│   └── build-initramfs.sh  # Monta e empacota o initramfs
+│   ├── build-initramfs.sh  # Monta e empacota o initramfs
+│   └── run-qemu.sh         # Inicia o QEMU com kernel + initramfs
 ├── docs/
 │   └── architecture.md     # Notas técnicas e aprendizados
 └── README.md
@@ -83,17 +84,13 @@ bash scripts/build-initramfs.sh
 
 ### 5. Rodar no QEMU
 ```bash
-qemu-system-x86_64 \
-  -kernel linux-stable/arch/x86/boot/bzImage \
-  -initrd initramfs.cpio.gz \
-  -nographic \
-  -append "console=ttyS0 loglevel=3"
+bash scripts/run-qemu.sh
 ```
 
 Dentro do shell:
 ```sh
 /bin/sysinfo_call
-dmesg | /bin/grep SOLUCAO
+dmesg | grep SOLUCAO
 ```
 
 ## Status das Etapas
@@ -104,11 +101,11 @@ dmesg | /bin/grep SOLUCAO
 | BusyBox 1.36.1 compilado | ✅ concluído |
 | Kernel 6.6.87 configurado | ✅ concluído |
 | Patch aplicado | ✅ concluído |
-| Kernel compilado | ⏳ pendente |
-| initramfs montado | ⏳ pendente |
-| sysinfo_call.c compilado | ⏳ pendente |
-| Boot no QEMU | ⏳ pendente |
-| Resposta coletada | ⏳ pendente |
+| Kernel compilado | ✅ concluído |
+| initramfs montado | ✅ concluído |
+| sysinfo_call.c compilado | ✅ concluído |
+| Boot no QEMU | ✅ concluído |
+| Resposta coletada | ✅ concluído |
 
 ## Conceitos Demonstrados
 
