@@ -120,10 +120,10 @@ dmesg | tail -20
 | Ambiente e dependências | ✅ concluído |
 | BusyBox 1.36.1 compilado | ✅ concluído |
 | Kernel 6.6.87 configurado | ✅ concluído |
-| Patch aplicado | ⏳ pendente |
-| Kernel compilado | ⏳ pendente |
-| initramfs montado | ⏳ pendente |
-| sysinfo_call.c compilado | ⏳ pendente |
+| Patch aplicado | ✅ concluído |
+| Kernel compilado | ✅ concluído |
+| initramfs montado | ✅ concluído |
+| sysinfo_call.c compilado | ✅ concluído |
 | Boot no QEMU | ⏳ pendente |
 | Resposta coletada | ⏳ pendente |
 
