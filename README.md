@@ -103,7 +103,7 @@ dmesg | /bin/grep SOLUCAO
 | Ambiente e dependências | ✅ concluído |
 | BusyBox 1.36.1 compilado | ✅ concluído |
 | Kernel 6.6.87 configurado | ✅ concluído |
-| Patch aplicado | ⏳ pendente |
+| Patch aplicado | ✅ concluído |
 | Kernel compilado | ⏳ pendente |
 | initramfs montado | ⏳ pendente |
 | sysinfo_call.c compilado | ⏳ pendente |
