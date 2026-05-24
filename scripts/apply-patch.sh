@@ -7,17 +7,17 @@ if [ -z "${MATRICULA:-}" ]; then
     read -rp "Matrícula: " MATRICULA
 fi
 
-PATCH_REPO="$WORKDIR/so-2025-02-t-01"
-PATCH_FILE="aluno-${MATRICULA}.patch"
+# Aceita caminho explícito ou usa o padrão: patch/patch-{MATRICULA}.patch
+PATCH_FILE="${1:-$WORKDIR/patch/patch-${MATRICULA}.patch}"
 
-echo "==> Clonando repositório de patches do IDP..."
-if [ ! -d "$PATCH_REPO" ]; then
-    gh repo clone idp-edu/so-2025-02-t-01 "$PATCH_REPO"
+if [ ! -f "$PATCH_FILE" ]; then
+    echo "ERRO: patch não encontrado em: $PATCH_FILE"
+    echo "Coloque o arquivo do professor em: $WORKDIR/patch/patch-${MATRICULA}.patch"
+    echo "Ou passe o caminho diretamente: bash scripts/apply-patch.sh /caminho/para/patch.patch"
+    exit 1
 fi
 
-cd "$PATCH_REPO"
-git switch "aluno-${MATRICULA}.patch"
-
+echo "==> Patch encontrado: $PATCH_FILE"
 echo ""
 echo "==> Conteúdo do patch (leia antes de aplicar):"
 echo "----------------------------------------------------"
@@ -33,12 +33,13 @@ fi
 
 echo "==> Aplicando patch em $WORKDIR/linux-stable..."
 cd "$WORKDIR/linux-stable"
-git apply "$PATCH_REPO/$PATCH_FILE"
+git apply "$PATCH_FILE"
 
 echo ""
 echo "==> Arquivos modificados pelo patch:"
 git diff HEAD --stat
 
 echo ""
-echo "Patch aplicado. Compile o kernel agora com:"
+echo "Patch aplicado com sucesso."
+echo "Compile o kernel agora com:"
 echo "  cd $WORKDIR/linux-stable && make -j\$(nproc) bzImage"
